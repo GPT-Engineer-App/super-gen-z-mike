@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, VStack, HStack, Heading, Text, Image, Button, Link, Divider, Grid, GridItem, useColorMode } from "@chakra-ui/react";
+import { Box, VStack, HStack, Heading, Text, Image, Button, Link, Divider, Grid, GridItem, useColorMode, FormControl, FormLabel, Input, Textarea } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
 
 const Index = () => {
@@ -39,8 +39,26 @@ const Index = () => {
 
         <Divider />
 
-        <VStack align="start" spacing={4} maxW="3xl">
+        <VStack align="start" spacing={8} maxW="3xl">
           <Heading size="xl">My Ventures 🔥</Heading>
+
+          <VStack align="start" spacing={4}>
+            <Heading size="lg">My Skills 🚀</Heading>
+            <HStack spacing={8}>
+              <VStack align="center">
+                <Image src="icon-1.png" alt="Skill 1" boxSize="60px" />
+                <Text>Skill 1</Text>
+              </VStack>
+              <VStack align="center">
+                <Image src="icon-2.png" alt="Skill 2" boxSize="60px" />
+                <Text>Skill 2</Text>
+              </VStack>
+              <VStack align="center">
+                <Image src="icon-3.png" alt="Skill 3" boxSize="60px" />
+                <Text>Skill 3</Text>
+              </VStack>
+            </HStack>
+          </VStack>
           <Grid templateColumns={["1fr", "1fr 1fr"]} gap={8}>
             <GridItem>
               <Image src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwc3RhcnR1cCUyMHRlYW18ZW58MHx8fHwxNzEwNDA3Mzk0fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Startup 1" />
@@ -55,6 +73,15 @@ const Index = () => {
           </Grid>
         </VStack>
 
+        <VStack align="start" spacing={4} maxW="3xl">
+          <Heading size="lg">Testimonials 💬</Heading>
+          <VStack align="start" spacing={2}>
+            <Text>"Michael is a visionary leader!" - Person 1</Text>
+            <Text>"Truly innovative ideas" - Person 2</Text>
+            <Text>"Can't wait to see what Michael does next" - Person 3</Text>
+          </VStack>
+        </VStack>
+
         <Divider />
 
         <VStack align="center" spacing={4} maxW="3xl">
@@ -62,8 +89,16 @@ const Index = () => {
           <Text fontSize="lg" textAlign="center">
             Got a sick idea? Hit me up, let's make it happen and change the world! 🌍
           </Text>
+          <FormControl id="email">
+            <FormLabel>Email address</FormLabel>
+            <Input type="email" />
+          </FormControl>
+          <FormControl id="message">
+            <FormLabel>Message</FormLabel>
+            <Textarea />
+          </FormControl>
           <Button colorScheme="purple" size="lg">
-            Get in Touch
+            Submit
           </Button>
         </VStack>
       </VStack>
